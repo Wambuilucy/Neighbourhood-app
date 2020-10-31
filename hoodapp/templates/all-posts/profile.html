@@ -1,0 +1,81 @@
+{% extends "all-posts/base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+        <div class="span3 well mt-5">
+            <center>
+            <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="{{profile.prof_pic.url}}" name="aboutme" width="140" height="140" class="img-circle"></a>
+            <h3 class="sign">{{profile.user}}</h3>
+            <em class="sign">click my face for more</em>
+            </center>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title sign"  id="myModalLabel sign">More About {{profile.user}}</h4>
+                        </div>
+                    <div class="modal-body">
+                        <center>
+                        <img src="{{profile.prof_pic.url}}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                        <h3 class="media-heading sign" >{{profile.user}}</h3>
+                       
+                        </center>
+                        <hr>
+                        <center>
+                        <p class="text-left sign"><strong>Bio: </strong><br>
+                            {{profile.bio}}</p>
+                            <p class="text-left sign" ><strong>Contact: </strong><br>
+                                {{profile.contact}}</p>
+                        <br>
+                        </center>
+                    </div>
+                    <div class="modal-footer">
+                        <center>
+                        <button type="button" class="btn btn-outline info sign" data-dismiss="modal">I've heard enough about {{profile.user}}</button>
+                        <!-- <a href="{%url 'update_profile'  %}"><button type="button" class="btn btn-default" data-dismiss="modal">Update profile</button></a>  -->
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% for post in posts %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <div class="col-md-3 col-lg-3 col-sm-12">
+                        <div class="card mb-3 mt-3 project">
+                                <h3 class="card-header">{{post.title}}</h3>
+                                <img style="height: 200px; width: 100%; display: block;" src="{{project.project_pic.url}}" alt="Card image">
+                                <div class="card-body">
+                                  <p class="card-text">{{post.post}}</p>
+                                  <p class="card-text text-muted">by {{project.user}}</p>
+                                </div>
+                              
+                              
+                                <div class="card-footer text-muted">
+                                    {{post.date_posted}}
+                                </div>
+                              </div>
+                </div>
+                   
+            </div>
+            
+        </div>
+        
+     
+    </div>
+    
+
+        
+    {% endfor %}
+ 
+    </div>
+
+    {% endblock content %}
