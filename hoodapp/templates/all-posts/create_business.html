@@ -1,0 +1,15 @@
+{% extends 'all-posts/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container">
+    <div class="card my-4 w-75 mx-auto">
+        <div class="card-body">
+            <form method="post" class="my-3" action="{% url 'create_business'%}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
