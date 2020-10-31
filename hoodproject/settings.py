@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'hoodapp',
+    'bootstrap3',
     'django_truncate',                   
     'django.contrib.admin',
     'django.contrib.auth',
