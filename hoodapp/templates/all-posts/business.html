@@ -1,0 +1,23 @@
+{% extends "all-posts/base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+                {% for business in business %}
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                        <div class="card mb-3 mt-3 project" style="height: fit-content;">
+                                <a href="{% url 'business' business.id %}">
+                                <h3 class="card-header sign">{{business.owner}}</h3>
+                                <div class="card-body">
+                                  <p class="card-text sign"> owned by :{{business.name}}</p>
+                                  <p class="card-text text-muted sign">by {{business.email}}</p>
+                                </div>
+                               
+                              </div>
+                </div>
+                {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
