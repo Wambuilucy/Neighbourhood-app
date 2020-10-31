@@ -1,0 +1,25 @@
+{% extends 'all-posts/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h3 class="text-center">Found {{businesses|length}} results for {{message}}</h3>
+
+    <!-- {% if businesses %} -->
+    <div class="row">
+            {% for business in businesses %}
+            <div class="col-md-4 ">
+                <div class="card mb-3">
+                    <a href="{% url 'business' business.id %}">
+                        <img src="{{business.profile_pic.url}}" alt="image" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <h3 class="card-title">{{business.name}}</h3>
+                        <p class="card-subtitle">owned by: {{business.owner}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    <!-- {% endif %} -->
+</div>
+{% endblock %}
