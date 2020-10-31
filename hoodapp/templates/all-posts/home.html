@@ -1,0 +1,26 @@
+{% extends "all-posts/base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+                    {% for neighbourhood in neighbourhoods %}
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                        <div class="card mb-3 mt-3 project" style="height: fit-content;">
+                              
+                                <h3 class="card-header sign">{{neighbourhood.name}}</h3>
+                                <div class="card-body">
+                                        
+                                  <p class="card-text sign">{{neighbourhood.location |truncatechars:50 }}</p>
+                                  <p class="card-text text-muted sign">police: {{neighbourhood.police_contacts}}</p>
+                                  <p class="card-text text-muted sign">ambulance: {{neighbourhood.health_contacts}}</p>
+                                </div>
+                                <a href="{%url 'single' neighbourhood.id  %}" class="btn btn-outline-warning btn-lg">join now</a>
+                              </div>
+                </div>
+                {% endfor %}
+
+        </div>
+    </div>
+{% endblock content %}
