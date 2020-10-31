@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.form-text,.asteriskField{
+    display: none;
+}
+.title {
+    font-family: 'Mitr', sans-serif;
+    margin: 20px;
+    color:rgba(177, 57, 10, 0.897);
+    padding-top: 230px; 
+    font-size: 70px;
+}
+.bg-img {
+    background-image: url("/static/images/lamding22.jpeg");
+    /* opacity: 0.9; */
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.subtitle{
+    font-family: cursive;
+    padding-top: 50px;
+    font-size: 50px;
+    height:
+
+}
+.neighbourhoodtitle{
+    font-family: fantasy;
+    padding-top: 200px;
+    font-size: 30px;
+}
